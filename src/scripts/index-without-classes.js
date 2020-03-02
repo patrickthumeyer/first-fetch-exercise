@@ -14,6 +14,7 @@ let compiler = Handlebars.compile(countryItem);
 const restCountries = "https://restcountries.eu/rest/v2/all";
 
 // \/ All of your javascript should go here \/
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch(restCountries)
     .then(res => {
@@ -32,39 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(e);
     });
 });
-
-Handlebars.registerHelper("lang", function(languages, options) {
-  return languages.map(element => {
-    if (languages.indexOf(element) === languages.length) {
-      return options.fn(element);
-    } else {
-      return options.fn(element);
-    }
-  });
-});
-
-// class FetchPage {
-//   constructor(restCountries) {
-//     this.restCountries = restCountries;
-
-//   }
-
-//   fetchAPI() {
-//     fetch(restCountries)
-//       .then(res => {
-//         if (res.ok) {
-//           return res.json();
-//         } else {
-//           throw new Error(`${res.status} ${res.statusText}`);
-//         }
-//       })
-//       .then(data => {
-//         let country = data;
-//         document.querySelector(".wrapper").innerHTML = compiler({ country });
-//         console.log("Content loaded!");
-//       })
-//       .catch(e => {
-//         console.log(e);
-//       });
-//   }
-// }

@@ -8,7 +8,30 @@
   </head>
 
   <body>
-    <main class="container"></main>
-    <script src="./scripts/index.js"></script>
+    <main
+      class="wrapper w-100 m-0 d-flex justify-content-center flex-wrap"
+    ></main>
+
+    <script id="countries_template" type="text/x-handlebars-template">
+        {{#each country}}
+
+        <div class="card m-3 d-block" style="width: 20rem; background-image:
+        linear-gradient(to bottom, rgba(26, 5, 3, 0.952), rgba(7, 6, 7, 0.74)),
+        url({{flag}});">
+          <img src={{flag}} class="card-img-top p-4 embed-responsive-item img-fluid" alt="flag">
+          <div class="card-body">
+            <h5 class="card-title text-white">{{name}} / {{alpha2Code}}</h5>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Capital: {{capital}}</li>
+            <li class="list-group-item">Subregion: {{subregion}}</li>
+            <li class="list-group-item">Population: {{population}}</li>
+            <li class="list-group-item">Languages: {{#lang languages}} {{this.name}}{{/lang}}</li>
+          </ul>
+        </div>
+      </div>
+
+        {{/each}}
+    </script>
   </body>
 </html>

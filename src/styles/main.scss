@@ -4,3 +4,13 @@ body,
 body * {
   box-sizing: border-box;
 }
+
+img {
+  height: 42% !important;
+  width: 100%;
+  object-fit: cover;
+}
+
+ul {
+  list-style-type: none;
+}
